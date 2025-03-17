@@ -1,0 +1,24 @@
+{
+  "name": "comphp/database",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Neuron\\Database\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NeuronTests\\Database\\": "test/"
+    }
+  },
+  "require": {
+    "php": "^8.4",
+    "psr/log": "^3.0",
+    "comphp/extensible": "^0.1",
+    "comphp/events": "^0.2",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.0"
+  }
+}
