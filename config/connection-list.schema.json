@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://commonphp.org/schemas/database/connections.schema.json",
+  "title": "Database Connections Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["driver"],
+        "properties": {
+          "driver": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "required": ["connections"]
+}
