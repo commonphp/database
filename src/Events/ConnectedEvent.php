@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace CommonPHP\Database\Events;
 
-class ConnectedEvent
+use CommonPHP\Runtime\Contracts\AbstractEvent;
+
+class ConnectedEvent extends AbstractEvent
 {
 
 }

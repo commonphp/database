@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CommonPHP\Database\Enums;
 
-class ParameterType
+enum ParameterType
 {
 
 }
