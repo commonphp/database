@@ -47,7 +47,13 @@ final class ConnectionRegistry implements Countable, IteratorAggregate
                     $connection,
                     is_string($name) ? $name : null,
                 ));
+
+                continue;
             }
+
+            throw ConnectionException::forInvalidConfiguration(
+                'Database connection registry items must be connection definitions or arrays.',
+            );
         }
     }
 

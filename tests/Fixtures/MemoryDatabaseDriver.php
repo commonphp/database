@@ -7,7 +7,7 @@ namespace CommonPHP\Database\Tests\Fixtures;
 use CommonPHP\Database\Contracts\AbstractDatabaseDriver;
 use CommonPHP\Database\Enums\FetchMode;
 
-final class MemoryDatabaseDriver extends AbstractDatabaseDriver
+class MemoryDatabaseDriver extends AbstractDatabaseDriver
 {
     /**
      * @var list<array{action: string, query?: string, parameters?: array<string|int, mixed>}>
@@ -19,6 +19,8 @@ final class MemoryDatabaseDriver extends AbstractDatabaseDriver
     public int $committed = 0;
 
     public int $rolledBack = 0;
+
+    public ?FetchMode $lastFetchMode = null;
 
     /**
      * @param array<string, list<array<string|int, mixed>>> $rows
@@ -55,6 +57,7 @@ final class MemoryDatabaseDriver extends AbstractDatabaseDriver
         FetchMode $fetchMode = FetchMode::FETCH_ASSOC,
     ): array {
         $this->log[] = ['action' => 'fetch all', 'query' => $query, 'parameters' => $parameters];
+        $this->lastFetchMode = $fetchMode;
 
         return $this->rows[$query] ?? [];
     }
